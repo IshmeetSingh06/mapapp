@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import reigonRoute from "./routes/reigonRoute.js"
+import cors from "cors"
+
 const app = express();
 dotenv.config();
 
@@ -16,6 +18,7 @@ const connect = () => {
     });
 };
 
+app.use(cors());
 app.use(express.json());
 app.use("/reigon", reigonRoute);
 
